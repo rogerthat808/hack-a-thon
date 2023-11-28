@@ -10,6 +10,7 @@
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
     
 </head>
+
 <body id="body">
     <h1>World Map</h1>
     <div id="cities">
@@ -27,10 +28,13 @@
     <div id="map"></div>
     <button id="standardskin">Standard Map</button>
     <button id="darkskin">Dark Map</button>
+    <button id="toposkin">Topo Map</button>
+    <button id="satmap">Satelite View</button>
     <div>
         <h3 id="copyrights">@ 2023 Rogelio Cruz. Maps © Leaflet & OpenStreetMap</h3>
     </div>
 </body>
+
 <!--                                       JavaScript                                                         -->
 <script>
 // create map and provide initial position
@@ -38,14 +42,15 @@ let map = L.map('map')
 map.setView([32.7157, -117.1611], 13);
 
 // map skin
-let skin = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+let skin = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}.png', {
     maxZoom: 20,
 }).addTo(map); 
 
 // button variables and event listeners
+let satMap = document.getElementById('satmap')
+let topoMap = document.getElementById('toposkin')
 let standardSkin = document.getElementById('standardskin')
 let darkSkin = document.getElementById('darkskin')
-
 let newYork = document.getElementById('New-York')
 let chicago = document.getElementById('Chicago')
 let mexico = document.getElementById('Mexico')
@@ -56,6 +61,18 @@ let berlin = document.getElementById('Berlin')
 let tokyo = document.getElementById('Tokyo')
 let beijing = document.getElementById('Beijing')
 let galvanize = document.getElementById('Galvanize')
+
+satMap.addEventListener('click', function(){
+    skin = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}.png', {
+        maxZoom: 20,
+    }).addTo(map)
+});
+
+topoMap.addEventListener('click', function(){
+    skin = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+        maxZoom: 20,
+    }).addTo(map)
+});
 
 standardSkin.addEventListener('click', function(){
     skin = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -111,4 +128,5 @@ galvanize.addEventListener('click', function(){
 
 </script>
 <!--                                       JavaScript                                                         -->
+
 </html>

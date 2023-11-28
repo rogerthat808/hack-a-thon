@@ -53,8 +53,9 @@ button {
     top: -83%;
     left: 5%;
     float: left;
-    background-color: rgb(170, 196, 125);
+    background-color: rgb(96, 111, 70);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.8);
+    color: rgb(255, 255, 255);
 }
 
 #darkskin {
@@ -63,6 +64,26 @@ button {
     left: -3%;
     float: left;
     background-color: rgb(78, 75, 75);
-    color: aliceblue;
+    color: rgb(255, 255, 255);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.8);
+}
+
+#toposkin {
+    width: 8%;
+    top: -76.88%;
+    left: -11%;
+    float: left;
+    background-color: rgb(134, 67, 67);
+    color: rgb(255, 255, 255);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.8);
+}
+
+#satmap {
+    width: 8%;
+    top: -73.8%;
+    left: -19%;
+    float: left;
+    background-color: rgb(67, 91, 134);
+    color: rgb(255, 255, 255);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.8);
 }
