@@ -3,14 +3,66 @@
     width: 1100px;
     position: relative;
     margin: auto;
+    box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.8);
 }
 
 body {
-    background-color: dimgrey;
+     background: linear-gradient(to bottom, rgba(206, 209, 174, 0.8), rgb(14, 14, 14));
+     height: 99vh; 
+     margin: 0; 
 }
 
 h1 {
-    color: azure;
+    color:rgb(236, 244, 236);
     padding-left: 45%;
     font-style: italic;
+    font-family: 'Helvetiva', sans-serif;
+    text-shadow: 8px 8px 8px rgba(0, 0, 0, 0.8);
+}
+
+h3 {
+    color:azure;
+    padding-left: 80%;
+    padding-top: 2%;
+    font-size: 12px;
+}
+
+#cities {
+    background-color: rgb(95, 158, 225);
+    height: 35px;
+    width: 1100px;
+    position: relative;
+    margin: auto;
+    border: 2px solid rgb(99, 99, 164);
+    
+}
+
+button {
+    height: 25px;
+    width: 104px;
+    padding-bottom: 1.5%;
+    top: 15%;
+    position: relative;
+    left: 1%;
+    background-color: beige;
+    border: 2px solid black;
+}
+
+#standardskin {
+    width: 8%;
+    top: -83%;
+    left: 5%;
+    float: left;
+    background-color: rgb(170, 196, 125);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.8);
+}
+
+#darkskin {
+    width: 8%;
+    top: -80%;
+    left: -3%;
+    float: left;
+    background-color: rgb(78, 75, 75);
+    color: aliceblue;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.8);
 }
