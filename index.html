@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hack-a-thon</title>
-    <script src="script.js"></script>
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Library refernces -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
-    
 </head>
 
 <body id="body">
+    <!-- title -->
     <h1>World Map</h1>
+
+    <!-- div holding buttons -->
     <div id="cities">
+        <!-- city buttons -->
         <button class="button" id="New-York">New York</button>
         <button class="button" id="Chicago">Chicago</button>
         <button class="button" id="Mexico">Mexico City</button>
@@ -25,12 +29,18 @@
         <button class="button" id="Beijing">Beijing</button>
         <button class="button" id="Galvanize">Galvanize HQ</button>
     </div>
+
+    <!-- div where map will be appended -->
     <div id="map"></div>
+
+    <!-- different map options -->
     <button id="standardskin">Standard Map</button>
     <button id="darkskin">Dark Map</button>
     <button id="toposkin">Topo Map</button>
     <button id="satmap">Satelite View</button>
+
     <div>
+        <!-- Fake copyrights :) -->
         <h3 id="copyrights">@ 2023 Rogelio Cruz. Maps © Leaflet & OpenStreetMap</h3>
     </div>
 </body>
@@ -39,9 +49,9 @@
 <script>
 // create map and provide initial position
 let map = L.map('map')
-map.setView([32.7157, -117.1611], 13);
+map.setView([35, -95], 3);
 
-// map skin
+// map initial skin
 let skin = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}.png', {
     maxZoom: 20,
 }).addTo(map); 
@@ -62,6 +72,7 @@ let tokyo = document.getElementById('Tokyo')
 let beijing = document.getElementById('Beijing')
 let galvanize = document.getElementById('Galvanize')
 
+// map skins
 satMap.addEventListener('click', function(){
     skin = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}.png', {
         maxZoom: 20,
@@ -86,6 +97,7 @@ darkSkin.addEventListener('click', function(){
     }).addTo(map)
 })
 
+// city locations
 newYork.addEventListener('click', function(){
     map.setView([40.7128, -74.0060], 13);
 })
@@ -128,5 +140,4 @@ galvanize.addEventListener('click', function(){
 
 </script>
 <!--                                       JavaScript                                                         -->
-
 </html>
